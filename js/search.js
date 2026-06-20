@@ -1,84 +1,130 @@
 /* ==========================================
-   STUDY KENDRA - SEARCH SYSTEM
+STUDY KENDRA - SEARCH SYSTEM
 ========================================== */
 
 const searchData = [
     
-    // Subjects
+    /* ==========================
+       SUBJECTS
+    ========================== */
+    
     {
         title: "English",
         category: "Subject",
+        keywords: "class 9 english kaveri",
         link: "class9.html"
     },
+    
     {
         title: "Hindi",
         category: "Subject",
+        keywords: "class 9 hindi",
         link: "class9.html"
     },
+    
     {
         title: "Science",
         category: "Subject",
+        keywords: "class 9 science",
         link: "class9.html"
     },
+    
     {
         title: "Maths",
         category: "Subject",
+        keywords: "class 9 maths mathematics",
         link: "class9.html"
     },
+    
     {
         title: "Sanskrit",
         category: "Subject",
+        keywords: "class 9 sanskrit",
         link: "class9.html"
     },
+    
     {
         title: "Computer",
         category: "Subject",
+        keywords: "class 9 computer",
         link: "class9.html"
     },
     
-    // Chapters
+    /* ==========================
+       KAVERI CHAPTERS & POEMS
+    ========================== */
+    
     {
         title: "How I Taught My Grandmother to Read",
         category: "Chapter",
-        link: "chapters/class-9-english-kaveri-chapter-1-how-i-taught-my-grandmother-to-read.html"
-    },
-    {
-        title: "Class 9 English Kaveri Chapter 1",
-        category: "Chapter",
-        link: "chapters/class-9-english-kaveri-chapter-1-how-i-taught-my-grandmother-to-read.html"
-    },
-    {
-        title: "Kaveri Chapter 1",
-        category: "Chapter",
+        keywords: "chapter 1 kaveri chapter 1 class 9 english grandmother",
         link: "chapters/class-9-english-kaveri-chapter-1-how-i-taught-my-grandmother-to-read.html"
     },
     
-    // Tools
+    {
+        title: "Bharat Our Land",
+        category: "Poem",
+        keywords: "poem 1 kaveri poem 1 bharat our land",
+        link: "chapters/class-9-english-kaveri-poem-1-bharat-our-land.html"
+    },
+    
+    {
+        title: "The Pot Maker",
+        category: "Chapter",
+        keywords: "chapter 2 kaveri chapter 2 class 9 english pot maker",
+        link: "chapters/class-9-english-kaveri-chapter-2-the-pot-maker.html"
+    },
+    
+    {
+        title: "Gifts of Grace Honouring Our Vocations",
+        category: "Poem",
+        keywords: "poem 2 kaveri poem 2 gifts of grace honouring our vocations",
+        link: "chapters/class-9-english-kaveri-poem-2-gifts-of-grace-honouring-our-vocations.html"
+    },
+    
+    {
+        title: "Winds of Change",
+        category: "Chapter",
+        keywords: "chapter 3 kaveri chapter 3 class 9 english winds of change",
+        link: "chapters/class-9-english-kaveri-chapter-3-winds-of-change.html"
+    },
+    
+    /* ==========================
+       TOOLS
+    ========================== */
+    
     {
         title: "Percentage Calculator",
         category: "Tool",
+        keywords: "percentage calculator",
         link: "tools.html"
     },
+    
     {
         title: "CGPA Calculator",
         category: "Tool",
+        keywords: "cgpa calculator",
         link: "tools.html"
     },
+    
     {
         title: "Attendance Calculator",
         category: "Tool",
+        keywords: "attendance calculator",
         link: "tools.html"
     },
+    
     {
         title: "Study Timer",
         category: "Tool",
+        keywords: "study timer pomodoro timer",
         link: "tools.html"
     }
     
 ];
 
 /* ==========================================
-   SEARCH START
+SEARCH START
 ========================================== */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -93,15 +139,12 @@ document.addEventListener("DOMContentLoaded", () => {
     
     if (!searchInput || !resultsContainer) return;
     
-    // Hide suggestions initially
     resultsContainer.style.display = "none";
     
-    // Show suggestions on focus
     searchInput.addEventListener("focus", () => {
         showDefaultResults(resultsContainer);
     });
     
-    // Search while typing
     searchInput.addEventListener("input", () => {
         
         const query =
@@ -114,14 +157,14 @@ document.addEventListener("DOMContentLoaded", () => {
         
         const results = searchData.filter(item =>
             item.title.toLowerCase().includes(query) ||
-            item.category.toLowerCase().includes(query)
+            item.category.toLowerCase().includes(query) ||
+            item.keywords.toLowerCase().includes(query)
         );
         
         renderResults(results, resultsContainer);
         
     });
     
-    // Hide when clicked outside
     document.addEventListener("click", (e) => {
         
         if (
@@ -136,7 +179,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 /* ==========================================
-   SHOW SEARCH RESULTS
+SHOW RESULTS
 ========================================== */
 
 function renderResults(results, container) {
@@ -147,7 +190,7 @@ function renderResults(results, container) {
     if (results.length === 0) {
         
         container.innerHTML =
-            "<a>No Results Found</a>";
+            "<div class='search-no-result'>No Results Found</div>";
         
         return;
     }
@@ -158,9 +201,12 @@ function renderResults(results, container) {
             document.createElement("a");
         
         suggestion.href = item.link;
+        suggestion.className = "search-suggestion-item";
         
-        suggestion.textContent =
-            item.title + " (" + item.category + ")";
+        suggestion.innerHTML =
+            "<span class='suggestion-title'>" + item.title +
+            "</span><span class='suggestion-category'>" +
+            item.category + "</span>";
         
         container.appendChild(suggestion);
         
@@ -169,7 +215,7 @@ function renderResults(results, container) {
 }
 
 /* ==========================================
-   DEFAULT SUGGESTIONS
+DEFAULT RESULTS
 ========================================== */
 
 function showDefaultResults(container) {
@@ -182,9 +228,12 @@ function showDefaultResults(container) {
             document.createElement("a");
         
         suggestion.href = item.link;
+        suggestion.className = "search-suggestion-item";
         
-        suggestion.textContent =
-            item.title;
+        suggestion.innerHTML =
+            "<span class='suggestion-title'>" + item.title +
+            "</span><span class='suggestion-category'>" +
+            item.category + "</span>";
         
         container.appendChild(suggestion);
         
