@@ -1,7 +1,7 @@
+
 /* ==========================================
    STUDY KENDRA
-   Main Stylesheet
-   Part 1
+   Main Stylesheet (Complete Fixed Version)
 ========================================== */
 
 /* ========= CSS RESET ========= */
@@ -481,11 +481,6 @@ p {
 
     margin-bottom: 10px;
 }
-/* ==========================================
-   STUDY KENDRA
-   Main Stylesheet
-   Part 2
-========================================== */
 
 /* ========= SUBJECTS SECTION ========= */
 
@@ -695,9 +690,105 @@ p {
     margin-bottom: 30px;
 }
 
-/* ========= SEARCH RESULTS ========= */
+/* ========= SEARCH INPUT WRAPPER ========= */
 
-.search-results,
+.search-input-wrapper {
+
+    position: relative;
+}
+
+/* ========= SEARCH RESULTS DROPDOWN ========= */
+
+.search-results {
+
+    display: none;
+
+    margin-top: 12px;
+
+    padding: 8px;
+
+    background: var(--card-bg);
+
+    border: 1px solid var(--border-color);
+
+    border-radius: 12px;
+
+    box-shadow: var(--shadow);
+
+    max-height: 350px;
+
+    overflow-y: auto;
+
+    position: relative;
+
+    z-index: 100;
+}
+
+.search-results .search-suggestion-item {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 15px;
+
+    margin: 5px 0;
+
+    border-radius: 10px;
+
+    background: var(--card-bg);
+
+    color: var(--text-color);
+
+    border: 1px solid transparent;
+
+    transition: var(--transition);
+}
+
+.search-results .search-suggestion-item:hover {
+
+    background: rgba(34, 197, 94, 0.08);
+
+    border-color: var(--primary-color);
+
+    transform: translateX(5px);
+}
+
+.search-results .suggestion-title {
+
+    font-weight: 600;
+}
+
+.search-results .suggestion-category {
+
+    font-size: 0.8rem;
+
+    color: var(--primary-color);
+
+    background: rgba(34, 197, 94, 0.1);
+
+    padding: 4px 10px;
+
+    border-radius: 999px;
+
+    white-space: nowrap;
+
+    margin-left: 10px;
+}
+
+.search-results .search-no-result {
+
+    padding: 20px;
+
+    text-align: center;
+
+    color: var(--text-light);
+}
+
+/* ========= SEARCH RESULT CARDS (used in grid layouts) ========= */
+
 .search-results-grid {
 
     margin-top: 20px;
@@ -793,6 +884,13 @@ p {
     border: 1px solid var(--border-color);
 
     text-align: center;
+
+    transition: var(--transition);
+}
+
+.category-card:hover {
+
+    transform: translateY(-5px);
 }
 
 .category-card h3 {
@@ -996,11 +1094,6 @@ p {
 
     margin-top: 20px;
 }
-/* ==========================================
-   STUDY KENDRA
-   Main Stylesheet
-   Part 3 (Final)
-========================================== */
 
 /* ========= CHAPTER SECTIONS ========= */
 
@@ -1194,6 +1287,20 @@ p {
     gap: 20px;
 }
 
+/* ========= KAVERI CHAPTER GRID ========= */
+
+.chapter-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(280px, 1fr));
+
+    gap: 20px;
+
+    margin-top: 20px;
+}
+
 .feature-card {
 
     background: var(--card-bg);
@@ -1212,6 +1319,8 @@ p {
 .feature-card:hover {
 
     transform: translateY(-5px);
+
+    border-color: var(--primary-color);
 }
 
 .feature-card h3 {
@@ -1219,6 +1328,11 @@ p {
     margin-bottom: 12px;
 
     color: var(--primary-color);
+}
+
+.chapter-grid .feature-card {
+
+    text-align: center;
 }
 
 /* ========= FOOTER ========= */
@@ -1440,57 +1554,50 @@ body.dark-mode .search-category {
 
     background: rgba(34, 197, 94, 0.15);
 }
-/* Existing CSS */
 
-/* ==========================
-   SEARCH SUGGESTIONS
-========================== */
+body.dark-mode .search-results .search-suggestion-item {
 
-.search-suggestions {
-    display: none;
-    background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    margin-top: 5px;
-    overflow: hidden;
+    background: var(--card-bg);
+
+    color: var(--text-color);
 }
 
-.search-suggestions a {
-    display: block;
-    padding: 10px;
-    text-decoration: none;
-    color: #333;
-    border-bottom: 1px solid #eee;
-    font-size: 14px;
+body.dark-mode .search-results .search-suggestion-item:hover {
+
+    background: rgba(34, 197, 94, 0.12);
 }
 
-.search-suggestions a:hover {
-    background: #f5f5f5;
-}
-.search-results{
-    display:none;
-    background:#ffffff;
-    border:1px solid #ddd;
-    border-radius:10px;
-    margin-top:5px;
-    max-height:250px;
-    overflow-y:auto;
+body.dark-mode .feature-card {
+
+    background: var(--card-bg);
+
+    border-color: var(--border-color);
 }
 
-.search-results a{
-    display:block;
-    padding:12px;
-    text-decoration:none;
-    color:#333;
-    border-bottom:1px solid #eee;
-    font-size:14px;
+body.dark-mode .chapter-hero {
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(34, 197, 94, 0.12),
+            rgba(22, 163, 74, 0.06)
+        );
 }
 
-.search-results a:last-child{
-    border-bottom:none;
+body.dark-mode .hero,
+body.dark-mode .page-hero {
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(34, 197, 94, 0.12),
+            rgba(22, 163, 74, 0.06)
+        );
 }
 
-.search-results a:hover{
-    background:#f5f5f5;
+body.dark-mode .stats {
+
+    background: var(--background);
 }
+
 /* ========= END OF FILE ========= */
