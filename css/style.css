@@ -1,4 +1,3 @@
-
 /* ==========================================
    STUDY KENDRA
    Main Stylesheet (Complete Fixed Version)
@@ -230,6 +229,21 @@ p {
     font-weight: 700;
 
     color: var(--primary-color);
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+}
+
+.logo-img {
+
+    height: 38px;
+
+    width: auto;
+
+    display: block;
 }
 
 /* ========= NAVIGATION ========= */
@@ -1598,6 +1612,414 @@ body.dark-mode .page-hero {
 body.dark-mode .stats {
 
     background: var(--background);
+}
+
+/* ==========================================
+   SINGLE TOOL PAGE (Dedicated Calculator Pages)
+========================================== */
+
+.tool-page-hero {
+
+    text-align: center;
+
+    padding: 70px 0 40px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(34, 197, 94, 0.08),
+            rgba(22, 163, 74, 0.04)
+        );
+}
+
+.tool-page-hero .tool-icon {
+
+    width: 64px;
+
+    height: 64px;
+
+    margin: 0 auto 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: var(--primary-color);
+
+    border-radius: 18px;
+
+    box-shadow: 0 8px 20px rgba(34, 197, 94, 0.25);
+}
+
+.tool-page-hero .tool-icon svg {
+
+    width: 32px;
+
+    height: 32px;
+
+    stroke: white;
+}
+
+.tool-page-hero h1 {
+
+    margin-bottom: 10px;
+}
+
+.tool-page-hero p {
+
+    max-width: 600px;
+
+    margin: 0 auto;
+}
+
+/* ========= SINGLE TOOL CARD ========= */
+
+.tool-single-wrap {
+
+    max-width: 560px;
+
+    margin: -20px auto 0;
+
+    padding: 0 20px;
+}
+
+.tool-single-card {
+
+    background: var(--card-bg);
+
+    border-radius: var(--radius);
+
+    padding: 36px;
+
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+
+    border: 1px solid var(--border-color);
+}
+
+.tool-single-card .tool-form {
+
+    gap: 18px;
+}
+
+.tool-single-card label {
+
+    font-size: 0.95rem;
+
+    letter-spacing: 0.2px;
+}
+
+.tool-single-card input {
+
+    padding: 14px 16px;
+
+    font-size: 1.05rem;
+
+    border-radius: 10px;
+}
+
+.tool-single-card .btn {
+
+    padding: 14px 24px;
+
+    font-size: 1.05rem;
+
+    margin-top: 6px;
+}
+
+.tool-single-card .result-box {
+
+    font-size: 1.15rem;
+
+    padding: 20px;
+
+    text-align: center;
+
+    margin-top: 16px;
+}
+
+.tool-single-card .result-box.show-result {
+
+    animation: fadeUp 0.4s ease forwards;
+}
+
+/* ========= HOW IT WORKS / FORMULA BOX ========= */
+
+.formula-box {
+
+    background: rgba(34, 197, 94, 0.06);
+
+    border: 1px dashed var(--primary-color);
+
+    border-radius: 10px;
+
+    padding: 16px 18px;
+
+    margin-top: 22px;
+
+    font-size: 0.92rem;
+
+    color: var(--text-color);
+}
+
+.formula-box strong {
+
+    color: var(--primary-color);
+}
+
+/* ========= EXPLORE MORE TOOLS ========= */
+
+.explore-tools {
+
+    margin-top: 40px;
+}
+
+.explore-tools h3 {
+
+    text-align: center;
+
+    font-size: 1.1rem;
+
+    margin-bottom: 18px;
+
+    color: var(--text-light);
+
+    font-weight: 600;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.5px;
+}
+
+.explore-tools-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+
+    gap: 14px;
+}
+
+.explore-tool-link {
+
+    background: var(--card-bg);
+
+    border: 1px solid var(--border-color);
+
+    border-radius: 10px;
+
+    padding: 16px 12px;
+
+    text-align: center;
+
+    transition: var(--transition);
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 8px;
+}
+
+.explore-tool-link:hover {
+
+    border-color: var(--primary-color);
+
+    transform: translateY(-3px);
+
+    box-shadow: var(--shadow);
+}
+
+.explore-tool-link svg {
+
+    width: 26px;
+
+    height: 26px;
+
+    stroke: var(--primary-color);
+}
+
+.explore-tool-link span {
+
+    font-size: 0.85rem;
+
+    font-weight: 600;
+
+    color: var(--text-color);
+}
+
+/* ========= TOOLS OVERVIEW PAGE (tools.html) ========= */
+
+.tools-overview-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+
+    gap: 25px;
+}
+
+.tool-overview-card {
+
+    background: var(--card-bg);
+
+    border-radius: var(--radius);
+
+    padding: 30px 25px;
+
+    box-shadow: var(--shadow);
+
+    border: 1px solid var(--border-color);
+
+    text-align: center;
+
+    transition: var(--transition);
+
+    display: block;
+}
+
+.tool-overview-card:hover {
+
+    transform: translateY(-6px);
+
+    border-color: var(--primary-color);
+}
+
+.tool-overview-card .tool-icon {
+
+    width: 56px;
+
+    height: 56px;
+
+    margin: 0 auto 16px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: rgba(34, 197, 94, 0.1);
+
+    border-radius: 14px;
+}
+
+.tool-overview-card .tool-icon svg {
+
+    width: 28px;
+
+    height: 28px;
+
+    stroke: var(--primary-color);
+}
+
+.tool-overview-card h2 {
+
+    font-size: 1.2rem;
+
+    margin-bottom: 8px;
+
+    color: var(--text-color);
+}
+
+.tool-overview-card p {
+
+    font-size: 0.9rem;
+
+    margin: 0;
+}
+
+/* ========= TIMER ENHANCEMENTS ========= */
+
+.timer-display.timer-running {
+
+    color: var(--primary-dark);
+
+    animation: pulseGlow 2s ease-in-out infinite;
+}
+
+.timer-display.timer-done {
+
+    color: #dc2626;
+
+    animation: none;
+}
+
+@keyframes pulseGlow {
+
+    0%, 100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.75;
+    }
+}
+
+.sound-toggle-row {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    margin-top: 14px;
+
+    font-size: 0.9rem;
+
+    color: var(--text-light);
+}
+
+.sound-toggle-row input[type="checkbox"] {
+
+    width: 18px;
+
+    height: 18px;
+
+    accent-color: var(--primary-color);
+
+    cursor: pointer;
+}
+
+/* ========= DARK MODE: TOOL PAGES ========= */
+
+body.dark-mode .tool-single-card {
+
+    background: var(--card-bg);
+}
+
+body.dark-mode .formula-box {
+
+    background: rgba(34, 197, 94, 0.1);
+}
+
+body.dark-mode .explore-tool-link {
+
+    background: var(--card-bg);
+}
+
+body.dark-mode .tool-overview-card .tool-icon {
+
+    background: rgba(34, 197, 94, 0.18);
+}
+
+/* ========= RESPONSIVE: TOOL PAGES ========= */
+
+@media (max-width: 480px) {
+
+    .tool-single-card {
+        padding: 24px 20px;
+    }
+
+    .tool-single-wrap {
+        padding: 0 16px;
+    }
 }
 
 /* ========= END OF FILE ========= */
