@@ -1,4 +1,4 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 
@@ -17,8 +17,8 @@
     <meta name="author" content="Study Kendra">
 
     <!-- Canonical -->
- <link rel="canonical"
-href="https://study-kendra.vercel.app/tools.html">
+    <link rel="canonical"
+        href="https://study-kendra.vercel.app/tools.html">
 
     <!-- Open Graph -->
     <meta property="og:title"
@@ -30,8 +30,8 @@ href="https://study-kendra.vercel.app/tools.html">
     <meta property="og:type"
         content="website">
 
-<meta property="og:url"
-content="https://study-kendra.vercel.app/tools.html">
+    <meta property="og:url"
+        content="https://study-kendra.vercel.app/tools.html">
 
     <meta property="og:image"
         content="assets/logo.png">
@@ -47,12 +47,10 @@ content="https://study-kendra.vercel.app/tools.html">
         content="Free calculators and study timer for students.">
 
     <!-- Favicon -->
-    <link rel="icon"
-        href="assets/favicon.ico">
+    <link rel="icon" href="assets/favicon.ico">
 
     <!-- CSS -->
-    <link rel="stylesheet"
-        href="css/style.css">
+    <link rel="stylesheet" href="css/style.css">
 
 </head>
 
@@ -63,8 +61,8 @@ content="https://study-kendra.vercel.app/tools.html">
         <div class="container">
 
             <a href="index.html" class="logo">
-    <img src="assets/logo.png" alt="Study Kendra Logo" class="logo-img">
-    Study Kendra
+                <img src="assets/logo.png" alt="Study Kendra Logo" class="logo-img">
+                Study Kendra
             </a>
 
             <nav class="navbar" id="navbar">
@@ -110,180 +108,61 @@ content="https://study-kendra.vercel.app/tools.html">
             </div>
         </section>
 
-        <!-- Tools Grid -->
-        <section class="tools-section">
+        <!-- Tools Overview Grid -->
+        <section class="chapter-section">
             <div class="container">
 
-                <div class="tools-grid">
+                <div class="tools-overview-grid">
 
-                    <!-- Percentage Calculator -->
-                    <div class="tool-card">
-
+                    <a href="tools/percentage-calculator.html" class="tool-overview-card">
+                        <div class="tool-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="19" y1="5" x2="5" y2="19"></line>
+                                <circle cx="6.5" cy="6.5" r="2.5"></circle>
+                                <circle cx="17.5" cy="17.5" r="2.5"></circle>
+                            </svg>
+                        </div>
                         <h2>Percentage Calculator</h2>
+                        <p>Calculate exam or test percentage instantly.</p>
+                    </a>
 
-                        <div class="tool-form">
-
-                            <label for="obtainedMarks">
-                                Obtained Marks
-                            </label>
-
-                            <input
-                                type="number"
-                                id="obtainedMarks"
-                                placeholder="Enter obtained marks">
-
-                            <label for="totalMarks">
-                                Total Marks
-                            </label>
-
-                            <input
-                                type="number"
-                                id="totalMarks"
-                                placeholder="Enter total marks">
-
-                            <button
-    id="calculatePercentage"
-    class="btn btn-primary">
-    Calculate
-</button>
-
-                            <div
-                                id="percentageResult"
-                                class="result-box">
-                                Result will appear here.
-                            </div>
-
+                    <a href="tools/cgpa-calculator.html" class="tool-overview-card">
+                        <div class="tool-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                                <path d="M2 17l10 5 10-5"></path>
+                                <path d="M2 12l10 5 10-5"></path>
+                            </svg>
                         </div>
-
-                    </div>
-
-                    <!-- CGPA Calculator -->
-                    <div class="tool-card">
-
                         <h2>CGPA Calculator</h2>
+                        <p>Convert your CGPA into percentage instantly.</p>
+                    </a>
 
-                        <div class="tool-form">
-
-                            <label for="cgpaInput">
-                                Enter CGPA
-                            </label>
-
-                            <input
-                                type="number"
-                                step="0.01"
-                                id="cgpaInput"
-                                placeholder="Enter CGPA">
-
-                            <button
-    id="calculateCGPA"
-    class="btn btn-primary">
-    Calculate
-</button>
-
-                            <div
-                                id="cgpaResult"
-                                class="result-box">
-                                Result will appear here.
-                            </div>
-
+                    <a href="tools/attendance-calculator.html" class="tool-overview-card">
+                        <div class="tool-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="4" width="18" height="18" rx="2"></rect>
+                                <line x1="16" y1="2" x2="16" y2="6"></line>
+                                <line x1="8" y1="2" x2="8" y2="6"></line>
+                                <line x1="3" y1="10" x2="21" y2="10"></line>
+                                <path d="M9 16l2 2 4-4"></path>
+                            </svg>
                         </div>
-
-                    </div>
-
-                    <!-- Attendance Calculator -->
-                    <div class="tool-card">
-
                         <h2>Attendance Calculator</h2>
+                        <p>Check if you meet the minimum attendance requirement.</p>
+                    </a>
 
-                        <div class="tool-form">
-
-                            <label for="attendedClasses">
-                                Classes Attended
-                            </label>
-
-                       <input
-    type="number"
-    id="classesAttended"
-    placeholder="Classes attended">
-
-                            <label for="totalClasses">
-                                Total Classes
-                            </label>
-
-                            <input
-                                type="number"
-                                id="totalClasses"
-                                placeholder="Total classes">
-
-         <button
-    id="calculateAttendance"
-    class="btn btn-primary">
-    Calculate
-</button>                   
-
-                            <div
-                                id="attendanceResult"
-                                class="result-box">
-                                Result will appear here.
-                            </div>
-
+                    <a href="tools/study-timer.html" class="tool-overview-card">
+                        <div class="tool-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="13" r="8"></circle>
+                                <path d="M12 9v4l3 2"></path>
+                                <path d="M9 2h6"></path>
+                            </svg>
                         </div>
-
-                    </div>
-
-                    <!-- Study Timer -->
-                    <div class="tool-card">
-
                         <h2>Study Timer</h2>
-
-                        <div class="timer-container">
-
-                            <div id="timerDisplay"
-                                class="timer-display">
-                                25:00
-                            </div>
-
-                            <div class="timer-inputs">
-
-                                <label for="countdownMinutes">
-                                    Countdown Minutes
-                                </label>
-
-                               
-<input
-    type="number"
-    id="timerMinutes"
-    min="1"
-    value="25">                                   
-
-                            </div>
-
-                            <div class="timer-buttons">
-
-                                <button
-    id="startTimer"
-    class="btn btn-primary">
-                                    Start
-                                </button>
-
-                               
-<button
-    id="pauseTimer"
-    class="btn btn-secondary">                                    
-                                    Pause
-                                </button>
-
-                                <button
-    id="resetTimer"
-    class="btn btn-danger">
-                                    Reset
-                                </button>
-
-                            </div>
-
-                        </div>
-
-                    </div>
+                        <p>Stay focused with a countdown timer and sound alert.</p>
+                    </a>
 
                 </div>
 
@@ -360,7 +239,6 @@ content="https://study-kendra.vercel.app/tools.html">
     </footer>
 
     <script src="js/main.js"></script>
-    <script src="js/tools.js"></script>
 
 </body>
-</html>
+        </html>
