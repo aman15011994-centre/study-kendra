@@ -1,4 +1,8 @@
-("DOMContentLoaded", () => {
+/* ==========================================
+STUDY KENDRA - PERCENTAGE CALCULATOR
+========================================== */
+
+document.addEventListener("DOMContentLoaded", () => {
 
     const calcBtn = document.getElementById("calculatePercentage");
     const resultBox = document.getElementById("percentageResult");
@@ -29,4 +33,4 @@
 
     });
 
-})
+});
