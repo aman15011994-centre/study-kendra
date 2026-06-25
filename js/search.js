@@ -94,35 +94,34 @@ const searchData = [
     ========================== */
     
     {
-        title: "Percentage Calculator",
-        category: "Tool",
-        keywords: "percentage calculator",
-        link: "tools.html"
-    },
-    
-    {
-        title: "CGPA Calculator",
-        category: "Tool",
-        keywords: "cgpa calculator",
-        link: "tools.html"
-    },
-    
-    {
-        title: "Attendance Calculator",
-        category: "Tool",
-        keywords: "attendance calculator",
-        link: "tools.html"
-    },
-    
-    {
-        title: "Study Timer",
-        category: "Tool",
-        keywords: "study timer pomodoro timer",
-        link: "tools.html"
-    }
+    title: "Percentage Calculator",
+    category: "Tool",
+    keywords: "percentage calculator",
+    link: "tools/percentage-calculator.html"
+},
+
+{
+    title: "CGPA Calculator",
+    category: "Tool",
+    keywords: "cgpa calculator",
+    link: "tools/cgpa-calculator.html"
+},
+
+{
+    title: "Attendance Calculator",
+    category: "Tool",
+    keywords: "attendance calculator",
+    link: "tools/attendance-calculator.html"
+},
+
+{
+    title: "Study Timer",
+    category: "Tool",
+    keywords: "study timer pomodoro timer",
+    link: "tools/study-timer.html"
+}
     
 ];
-
 /* ==========================================
 SEARCH START
 ========================================== */
