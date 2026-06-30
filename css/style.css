@@ -637,6 +637,31 @@ p {
     margin-bottom: 8px;
 }
 
+/* ----- NEW: spacing for h3/p inside info-card
+   (used by "How to Calculate" examples and FAQ section) ----- */
+
+.info-card h3 {
+
+    margin-top: 22px;
+
+    margin-bottom: 10px;
+}
+
+.info-card h3:first-of-type {
+
+    margin-top: 5px;
+}
+
+.info-card p {
+
+    margin-bottom: 12px;
+}
+
+.info-card p:last-child {
+
+    margin-bottom: 0;
+}
+
 /* ========= SEARCH SECTION ========= */
 
 .search-section h2,
@@ -1768,6 +1793,20 @@ body.dark-mode .stats {
     color: var(--primary-color);
 }
 
+/* ----- NEW: formula-box used inside info-card too
+   (e.g. percentage formula in the "How to Calculate" section) ----- */
+
+.info-card .formula-box {
+
+    margin-top: 0;
+
+    margin-bottom: 18px;
+
+    font-size: 1.05rem;
+
+    font-weight: 600;
+}
+
 /* ========= EXPLORE MORE TOOLS ========= */
 
 .explore-tools {
@@ -2020,6 +2059,51 @@ body.dark-mode .tool-overview-card .tool-icon {
     .tool-single-wrap {
         padding: 0 16px;
     }
+}
+
+/* ==========================================
+   MORE CHAPTERS
+========================================== */
+
+.more-chapters {
+    margin-top: 60px;
+    padding: 30px;
+    border-radius: 16px;
+    background: #f8f9fa;
+}
+
+.more-chapters h2 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.chapter-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.chapter-link {
+    display: block;
+    padding: 14px;
+    border-radius: 10px;
+    text-decoration: none;
+    background: white;
+    border: 1px solid #ddd;
+    color: #222;
+    font-weight: 600;
+    transition: .25s;
+}
+
+.chapter-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .08);
+}
+
+.chapter-link.active {
+    background: #0d6efd;
+    color: white;
+    border-color: #0d6efd;
 }
 
 /* ========= END OF FILE ========= */
