@@ -6,13 +6,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Free & Unlimited Study Timer - Pomodoro Countdown Timer | Study Kendra</title>
+    <title>Free Pomodoro Study Timer for Students</title>
 
     <meta name="description"
-        content="Free online study timer for students. Set a countdown, stay focused, and get a sound alert when your study session ends. No login required.">
+        content="Free Pomodoro study timer for students. Set 25/5 minute Pomodoro sessions or custom countdown. Sound alert when time is up. Perfect for JEE, NEET, board exam prep. No login required.">
 
     <meta name="keywords"
-        content="Study Timer, Pomodoro Timer, Online Countdown Timer, Focus Timer for Students, Study Kendra">
+        content="Pomodoro Study Timer, Free Study Timer for Students, Pomodoro Timer Online, Study Timer for JEE NEET, Countdown Timer for Studying, Online Study Timer Free, Pomodoro Technique for Students, Study Timer for Board Exams, Focus Timer Students, Study Kendra">
 
     <meta name="author" content="Study Kendra">
 
@@ -22,10 +22,10 @@
 
     <!-- Open Graph -->
     <meta property="og:title"
-        content="Free & Unlimited Study Timer - Pomodoro Countdown Timer">
+        content="Free Pomodoro Study Timer for Students">
 
     <meta property="og:description"
-        content="Free online study timer with sound alert - stay focused during study sessions.">
+        content="Free Pomodoro study timer with sound alert. Set 25/5 sessions or custom countdown. Perfect for JEE, NEET, board exam prep. No login required.">
 
     <meta property="og:type"
         content="website">
@@ -41,16 +41,84 @@
         content="summary_large_image">
 
     <meta name="twitter:title"
-        content="Free Study Timer | Study Kendra">
+        content="Free Pomodoro Study Timer for Students">
 
     <meta name="twitter:description"
-        content="Free online countdown timer with sound alert for focused study sessions.">
+        content="Free Pomodoro study timer with sound alert. No login required.">
 
     <!-- Favicon -->
     <link rel="icon" href="../assets/favicon.ico">
 
     <!-- CSS -->
     <link rel="stylesheet" href="../css/style.css">
+
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the Pomodoro Technique?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The Pomodoro Technique is a time management method where you study for 25 minutes (one Pomodoro), take a 5-minute break, and repeat. After 4 Pomodoros, take a longer 15-30 minute break. It helps students maintain focus and avoid burnout."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long should I study in one session?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The ideal study session is 25 minutes using the Pomodoro Technique, followed by a 5-minute break. For competitive exams like JEE and NEET, students can extend sessions to 45-50 minutes with 10-minute breaks. Avoid studying more than 90 minutes without a break."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does the Pomodoro Technique work for JEE and NEET preparation?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, the Pomodoro Technique is highly effective for JEE and NEET preparation. Start with 25-minute focused sessions on one topic. After 4 sessions (2 hours of study), take a longer break. This prevents mental fatigue during long study days of 8-10 hours."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How many Pomodoros should I do in a day?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Most students can complete 8-12 Pomodoros (3-5 hours of focused study) per day effectively. Competitive exam aspirants like JEE/NEET students can aim for 12-16 Pomodoros (5-7 hours) with proper breaks. Quality of focus matters more than quantity."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is this study timer free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, this Pomodoro study timer is completely free. No login, no sign-up, no premium plan. Just set your time and start studying."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- WebApplication Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Free Pomodoro Study Timer for Students",
+      "url": "https://study-kendra.vercel.app/tools/study-timer.html",
+      "description": "Free online Pomodoro study timer for students with sound alert, preset sessions and custom countdown.",
+      "applicationCategory": "EducationalApplication",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "INR"
+      }
+    }
+    </script>
 
 </head>
 
@@ -107,11 +175,12 @@
                     </svg>
                 </div>
 
-                <h1>Study Timer</h1>
+                <h1>Study Timer for Students</h1>
 
                 <p>
-                    Set a countdown, stay focused, and get a gentle sound
-                    alert when your study session ends.
+                    Free Pomodoro study timer — set 25 minute focused sessions
+                    or custom countdown. Sound alert when time is up.
+                    Perfect for JEE, NEET and board exam preparation.
                 </p>
 
             </div>
@@ -125,21 +194,69 @@
 
                     <div class="timer-container">
 
+                        <!-- Session Label -->
+                        <p id="sessionLabel" style="
+                            font-size: 0.9rem;
+                            font-weight: 600;
+                            color: var(--primary-color);
+                            margin-bottom: 4px;
+                            text-transform: uppercase;
+                            letter-spacing: 0.5px;
+                        ">
+                            Focus Session
+                        </p>
+
                         <div id="timerDisplay" class="timer-display">
                             25:00
+                        </div>
+
+                        <!-- Pomodoro Presets -->
+                        <div style="
+                            display: flex;
+                            gap: 8px;
+                            justify-content: center;
+                            flex-wrap: wrap;
+                            margin-bottom: 18px;
+                        ">
+                            <button
+                                onclick="setPreset(25, 'Focus Session — 25 min')"
+                                class="btn btn-secondary"
+                                style="padding: 8px 14px; font-size: 0.85rem;">
+                                🍅 Pomodoro 25m
+                            </button>
+                            <button
+                                onclick="setPreset(5, 'Short Break — 5 min')"
+                                class="btn btn-secondary"
+                                style="padding: 8px 14px; font-size: 0.85rem;">
+                                ☕ Short Break 5m
+                            </button>
+                            <button
+                                onclick="setPreset(15, 'Long Break — 15 min')"
+                                class="btn btn-secondary"
+                                style="padding: 8px 14px; font-size: 0.85rem;">
+                                🛋️ Long Break 15m
+                            </button>
+                            <button
+                                onclick="setPreset(45, 'Deep Study — 45 min')"
+                                class="btn btn-secondary"
+                                style="padding: 8px 14px; font-size: 0.85rem;">
+                                📚 Deep Study 45m
+                            </button>
                         </div>
 
                         <div class="timer-inputs">
 
                             <label for="timerMinutes">
-                                Countdown Minutes
+                                Or Set Custom Minutes
                             </label>
 
                             <input
                                 type="number"
                                 id="timerMinutes"
                                 min="1"
-                                value="25">
+                                max="180"
+                                value="25"
+                                placeholder="Enter minutes (e.g. 25)">
 
                         </div>
 
@@ -162,6 +279,23 @@
                         <div class="sound-toggle-row">
                             <input type="checkbox" id="soundToggle" checked>
                             <label for="soundToggle">Play sound when time is up</label>
+                        </div>
+
+                        <!-- Session Counter -->
+                        <div style="
+                            margin-top: 18px;
+                            padding: 12px;
+                            border-radius: 8px;
+                            background: rgba(34, 197, 94, 0.06);
+                            border: 1px solid rgba(34, 197, 94, 0.2);
+                            font-size: 0.9rem;
+                            color: var(--text-light);
+                        ">
+                            🍅 Pomodoros completed today:
+                            <strong id="pomodoroCount"
+                                style="color: var(--primary-color);">
+                                0
+                            </strong>
                         </div>
 
                     </div>
@@ -211,25 +345,162 @@
             </div>
         </section>
 
-        <!-- Tools Information -->
+        <!-- What is Pomodoro Technique -->
         <section class="info-section">
             <div class="container">
 
                 <div class="info-card">
 
-                    <h2>Why Use This Study Timer?</h2>
+                    <h2>What is the Pomodoro Technique?</h2>
 
                     <p>
-                        This Pomodoro-style timer helps students stay focused
-                        during study sessions and take structured breaks.
+                        The Pomodoro Technique is a simple and proven time
+                        management method that helps students study more
+                        effectively without burnout.
+                    </p>
+
+                    <div class="formula-box">
+                        <strong>Basic Cycle:</strong> Study 25 min → Break 5 min → Repeat 4 times → Long Break 15-30 min
+                    </div>
+
+                    <h3>Step 1 — Pick One Topic</h3>
+                    <p>
+                        Before starting the timer, decide exactly what you
+                        will study. Example: "Chapter 5 — Laws of Motion,
+                        solve 10 numericals." One clear goal per session.
+                    </p>
+
+                    <h3>Step 2 — Set 25 Minutes and Focus</h3>
+                    <p>
+                        Click "Pomodoro 25m" above and start. No phone, no
+                        social media, no distractions for exactly 25 minutes.
+                        If a distraction thought comes, write it down and
+                        come back to it after the session.
+                    </p>
+
+                    <h3>Step 3 — Take a Short Break</h3>
+                    <p>
+                        When the timer rings, stop immediately. Click
+                        "Short Break 5m" and genuinely rest — stretch,
+                        drink water, look away from screen. Do not study
+                        during breaks.
+                    </p>
+
+                    <h3>Step 4 — Repeat and Take a Long Break</h3>
+                    <p>
+                        After every 4 Pomodoros (2 hours of focused study),
+                        take a 15-30 minute long break. Eat something, go
+                        for a short walk. Your brain needs real recovery
+                        before the next block.
+                    </p>
+
+                    <h3>Pomodoro Schedule for Exam Preparation</h3>
+
+                    <div style="overflow-x: auto; margin-top: 10px;">
+                        <table class="info-table">
+                            <thead>
+                                <tr>
+                                    <th>Time</th>
+                                    <th>Session</th>
+                                    <th>Duration</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>9:00 AM</td><td>🍅 Pomodoro 1 — Focus</td><td>25 min</td></tr>
+                                <tr><td>9:25 AM</td><td>☕ Short Break</td><td>5 min</td></tr>
+                                <tr><td>9:30 AM</td><td>🍅 Pomodoro 2 — Focus</td><td>25 min</td></tr>
+                                <tr><td>9:55 AM</td><td>☕ Short Break</td><td>5 min</td></tr>
+                                <tr><td>10:00 AM</td><td>🍅 Pomodoro 3 — Focus</td><td>25 min</td></tr>
+                                <tr><td>10:25 AM</td><td>☕ Short Break</td><td>5 min</td></tr>
+                                <tr><td>10:30 AM</td><td>🍅 Pomodoro 4 — Focus</td><td>25 min</td></tr>
+                                <tr><td>10:55 AM</td><td>🛋️ Long Break</td><td>20 min</td></tr>
+                                <tr><td>11:15 AM</td><td>Next Block Starts</td><td>—</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Why Use This -->
+        <section class="info-section">
+            <div class="container">
+
+                <div class="info-card">
+
+                    <h2>Why Use This Pomodoro Study Timer?</h2>
+
+                    <p>
+                        Most study timer apps require sign-up, show ads, or
+                        lock features behind a premium plan. This timer is
+                        completely free with no distractions — just you and
+                        your studies.
                     </p>
 
                     <ul>
-                        <li>Customizable countdown duration</li>
-                        <li>Gentle sound alert on completion</li>
-                        <li>Mobile friendly</li>
-                        <li>Free to use, no login required</li>
+                        <li>4 quick presets — Pomodoro 25m, Short Break 5m, Long Break 15m, Deep Study 45m</li>
+                        <li>Custom countdown — set any duration from 1 to 180 minutes</li>
+                        <li>Sound alert when session ends — no need to watch the screen</li>
+                        <li>Pomodoro counter — tracks how many sessions you completed today</li>
+                        <li>Works for JEE, NEET, UPSC, board exams and daily school study</li>
+                        <li>No sign-up, no login, no premium plan</li>
+                        <li>Mobile friendly — use on phone, tablet or laptop</li>
+                        <li>No data stored — runs entirely in your browser</li>
                     </ul>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="info-section">
+            <div class="container">
+
+                <div class="info-card">
+
+                    <h2>Frequently Asked Questions</h2>
+
+                    <h3>What is the Pomodoro Technique?</h3>
+                    <p>
+                        Study 25 minutes with full focus, then take a 5-minute
+                        break. Repeat 4 times, then take a 15-30 minute long
+                        break. One 25-minute session is called one Pomodoro.
+                        It prevents burnout and improves concentration.
+                    </p>
+
+                    <h3>How long should I study in one session?</h3>
+                    <p>
+                        25 minutes is ideal for most students. For competitive
+                        exams like JEE and NEET, you can extend to 45-50
+                        minutes per session. Never study more than 90 minutes
+                        without a proper break — your retention drops sharply.
+                    </p>
+
+                    <h3>Does the Pomodoro Technique work for JEE and NEET?</h3>
+                    <p>
+                        Yes, highly effective. Target 12-16 Pomodoros per day
+                        (5-7 hours of focused study) with proper breaks.
+                        Assign each Pomodoro to one specific topic or chapter
+                        for better tracking and coverage.
+                    </p>
+
+                    <h3>How many Pomodoros should I do in a day?</h3>
+                    <p>
+                        8-12 Pomodoros (3-5 hours) is good for school students.
+                        Competitive exam aspirants can do 12-16 Pomodoros
+                        (5-7 hours). Quality of focus matters more than quantity
+                        — 8 focused Pomodoros beat 16 distracted ones.
+                    </p>
+
+                    <h3>Is this study timer free?</h3>
+                    <p>
+                        Yes, completely free. No login, no sign-up, no
+                        premium plan, no ads inside the timer. Just set
+                        your time and start studying.
+                    </p>
 
                 </div>
 
@@ -272,5 +543,36 @@
     <script src="../js/main.js"></script>
     <script src="../js/timer.js"></script>
 
+    <!-- Preset + Pomodoro Counter JS -->
+    <script>
+
+        let pomodoroCount = 0;
+
+        function setPreset(minutes, label) {
+            document.getElementById('timerMinutes').value = minutes;
+            document.getElementById('sessionLabel').textContent = label;
+
+            // Reset display
+            const mins = String(minutes).padStart(2, '0');
+            document.getElementById('timerDisplay').textContent = `${mins}:00`;
+
+            // Trigger reset if timer.js exposes a reset function
+            if (typeof resetTimerState === 'function') {
+                resetTimerState();
+            }
+        }
+
+        // Count Pomodoros — listen for timer completion
+        // timer.js should call window.onPomodoroComplete() when a 25-min session ends
+        window.onPomodoroComplete = function () {
+            const minutes = parseInt(document.getElementById('timerMinutes').value);
+            if (minutes === 25) {
+                pomodoroCount++;
+                document.getElementById('pomodoroCount').textContent = pomodoroCount;
+            }
+        };
+
+    </script>
+
 </body>
-  </html>
+</html>
