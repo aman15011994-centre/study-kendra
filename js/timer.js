@@ -18,6 +18,9 @@ document.addEventListener("DOMContentLoaded", () => {
     let timerInterval = null;
     let isRunning = false;
 
+    // Track minutes at session start (for Pomodoro counter)
+    let sessionMinutes = parseInt(minutesInput.value || 25);
+
     /* ==========================================
     DISPLAY UPDATE
     ========================================== */
@@ -126,6 +129,9 @@ document.addEventListener("DOMContentLoaded", () => {
             remainingSeconds = parseInt(minutesInput.value || 25) * 60;
         }
 
+        // Save session minutes at the time Start is pressed
+        sessionMinutes = parseInt(minutesInput.value || 25);
+
         isRunning = true;
         display.classList.remove("timer-done");
         display.classList.add("timer-running");
@@ -142,6 +148,13 @@ document.addEventListener("DOMContentLoaded", () => {
                 display.classList.add("timer-done");
                 display.textContent = "Done!";
                 startAlarm();
+
+                // NEW: Fire Pomodoro counter if session was 25 minutes
+                if (sessionMinutes === 25) {
+                    if (typeof window.onPomodoroComplete === "function") {
+                        window.onPomodoroComplete();
+                    }
+                }
             }
 
         }, 1000);
@@ -182,5 +195,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Initialize display
     updateDisplay(remainingSeconds);
+
+    /* ==========================================
+    NEW: resetTimerState - called by preset
+    buttons in study-timer.html when user
+    clicks Pomodoro 25m / Short Break / etc.
+    ========================================== */
+
+    window.resetTimerState = function () {
+        clearInterval(timerInterval);
+        isRunning = false;
+        remainingSeconds = parseInt(minutesInput.value || 25) * 60;
+        updateDisplay(remainingSeconds);
+        display.classList.remove("timer-running", "timer-done");
+        stopAlarm();
+    };
 
 });
