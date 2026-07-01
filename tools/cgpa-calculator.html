@@ -6,13 +6,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Free & Unlimited CGPA Calculator - Instant Result | Study Kendra</title>
+    <title>Free & Simple CGPA Calculator for Students</title>
 
     <meta name="description"
-        content="Convert CGPA to percentage instantly. Free online CGPA calculator for students - enter your CGPA to get accurate percentage results in seconds.">
+        content="Free & simple CGPA calculator for students. Convert CGPA to percentage instantly using CBSE, university and standard formulas. No login required - accurate results in seconds.">
 
     <meta name="keywords"
-        content="CGPA Calculator, CGPA to Percentage Calculator, Convert CGPA, Online CGPA Calculator, Study Kendra">
+        content="CGPA Calculator, Simple CGPA Calculator, CGPA Calculator for Students, CGPA to Percentage Calculator, Free CGPA Calculator, CBSE CGPA Calculator, How to Calculate CGPA, CGPA Percentage Calculator, Study Kendra">
 
     <meta name="author" content="Study Kendra">
 
@@ -22,10 +22,10 @@
 
     <!-- Open Graph -->
     <meta property="og:title"
-        content="Free & Unlimited CGPA Calculator - Instant Result">
+        content="Free & Simple CGPA Calculator for Students">
 
     <meta property="og:description"
-        content="Convert CGPA to percentage instantly with this free online tool for students.">
+        content="Convert CGPA to percentage instantly using CBSE and standard formulas. Free online CGPA calculator - no login required.">
 
     <meta property="og:type"
         content="website">
@@ -41,16 +41,84 @@
         content="summary_large_image">
 
     <meta name="twitter:title"
-        content="Free CGPA Calculator | Study Kendra">
+        content="Free & Simple CGPA Calculator for Students">
 
     <meta name="twitter:description"
-        content="Convert CGPA to percentage instantly - free online tool for students.">
+        content="Convert CGPA to percentage instantly - free online tool for students. No login required.">
 
     <!-- Favicon -->
     <link rel="icon" href="../assets/favicon.ico">
 
     <!-- CSS -->
     <link rel="stylesheet" href="../css/style.css">
+
+    <!-- FAQ Schema for Google Rich Snippets -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How to convert CGPA to percentage?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For CBSE students: multiply your CGPA by 9.5. For example, 8.0 CGPA × 9.5 = 76%. For most universities: multiply your CGPA by 10. For example, 8.0 CGPA × 10 = 80%."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the CGPA to percentage formula for CBSE?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "CBSE uses the formula: Percentage = CGPA × 9.5. So if your CGPA is 9.2, your percentage is 9.2 × 9.5 = 87.4%."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is CGPA calculated from marks?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Add the grade points of all subjects and divide by the total number of subjects. Formula: CGPA = Sum of Grade Points of All Subjects ÷ Total Number of Subjects."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is 8.5 CGPA good?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, 8.5 CGPA is considered very good. It equals approximately 80.75% (using CBSE formula: 8.5 × 9.5) or 85% (using university formula: 8.5 × 10). Most companies and colleges consider 7.5+ CGPA as good."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is this CGPA calculator free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, this CGPA calculator is completely free to use. No login, no sign-up, no hidden charges. Just enter your CGPA and get instant results."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Tool Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Free & Simple CGPA Calculator for Students",
+      "url": "https://study-kendra.vercel.app/tools/cgpa-calculator.html",
+      "description": "Free online CGPA calculator that converts CGPA to percentage using CBSE and standard university formulas.",
+      "applicationCategory": "EducationalApplication",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "INR"
+      }
+    }
+    </script>
 
 </head>
 
@@ -107,11 +175,12 @@
                     </svg>
                 </div>
 
-                <h1>CGPA Calculator</h1>
+                <h1>Free & Simple CGPA Calculator</h1>
 
                 <p>
-                    Enter your CGPA to instantly convert it into percentage.
-                    Free, fast and accurate.
+                    Enter your CGPA to instantly convert it into percentage
+                    using CBSE or standard university formula. Free, accurate
+                    and no sign-up required.
                 </p>
 
             </div>
@@ -126,19 +195,42 @@
                     <div class="tool-form">
 
                         <label for="cgpaInput">
-                            Enter CGPA
+                            Enter Your CGPA
                         </label>
 
                         <input
                             type="number"
                             step="0.01"
+                            min="0"
+                            max="10"
                             id="cgpaInput"
                             placeholder="Enter CGPA (e.g. 8.5)">
+
+                        <label for="formulaSelect">
+                            Select Formula
+                        </label>
+
+                        <select
+                            id="formulaSelect"
+                            style="
+                                width: 100%;
+                                padding: 14px 16px;
+                                border-radius: 10px;
+                                border: 1px solid var(--border-color);
+                                background: var(--background);
+                                color: var(--text-color);
+                                font-size: 1rem;
+                                outline: none;
+                                cursor: pointer;
+                            ">
+                            <option value="9.5">CBSE Formula (CGPA × 9.5)</option>
+                            <option value="10">University Formula (CGPA × 10)</option>
+                        </select>
 
                         <button
                             id="calculateCGPA"
                             class="btn btn-primary">
-                            Calculate Percentage
+                            Convert to Percentage
                         </button>
 
                         <div
@@ -194,7 +286,85 @@
             </div>
         </section>
 
-        <!-- Tools Information -->
+        <!-- How to Calculate CGPA -->
+        <section class="info-section">
+            <div class="container">
+
+                <div class="info-card">
+
+                    <h2>How to Convert CGPA to Percentage</h2>
+
+                    <p>
+                        Different boards and universities use different formulas
+                        to convert CGPA into percentage. Here are the two most
+                        common ones used in India:
+                    </p>
+
+                    <h3>Formula 1 — CBSE Students (Class 10 & 12)</h3>
+
+                    <div class="formula-box">
+                        <strong>Formula:</strong> Percentage = CGPA × 9.5
+                    </div>
+
+                    <p>
+                        Example: If your CBSE CGPA is 9.2, then your
+                        percentage is 9.2 × 9.5 = <strong>87.4%</strong>
+                    </p>
+
+                    <h3>Formula 2 — Most Universities (Engineering, Degree)</h3>
+
+                    <div class="formula-box">
+                        <strong>Formula:</strong> Percentage = CGPA × 10
+                    </div>
+
+                    <p>
+                        Example: If your university CGPA is 8.5, then your
+                        percentage is 8.5 × 10 = <strong>85%</strong>
+                    </p>
+
+                    <h3>How is CGPA Calculated from Marks?</h3>
+
+                    <div class="formula-box">
+                        <strong>Formula:</strong> CGPA = Sum of Grade Points of All Subjects ÷ Total Number of Subjects
+                    </div>
+
+                    <p>
+                        Example: If your grade points in 5 subjects are
+                        9, 8, 7, 9, 8 — then CGPA = (9+8+7+9+8) ÷ 5
+                        = 41 ÷ 5 = <strong>8.2 CGPA</strong>
+                    </p>
+
+                    <h3>CGPA to Percentage Quick Reference Table</h3>
+
+                    <div style="overflow-x: auto; margin-top: 10px;">
+                        <table class="info-table">
+                            <thead>
+                                <tr>
+                                    <th>CGPA</th>
+                                    <th>CBSE % (× 9.5)</th>
+                                    <th>University % (× 10)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>10.0</td><td>95%</td><td>100%</td></tr>
+                                <tr><td>9.5</td><td>90.25%</td><td>95%</td></tr>
+                                <tr><td>9.0</td><td>85.5%</td><td>90%</td></tr>
+                                <tr><td>8.5</td><td>80.75%</td><td>85%</td></tr>
+                                <tr><td>8.0</td><td>76%</td><td>80%</td></tr>
+                                <tr><td>7.5</td><td>71.25%</td><td>75%</td></tr>
+                                <tr><td>7.0</td><td>66.5%</td><td>70%</td></tr>
+                                <tr><td>6.5</td><td>61.75%</td><td>65%</td></tr>
+                                <tr><td>6.0</td><td>57%</td><td>60%</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Why Use This Calculator -->
         <section class="info-section">
             <div class="container">
 
@@ -204,15 +374,67 @@
 
                     <p>
                         This tool helps students quickly convert CGPA into
-                        percentage for admissions, applications and records.
+                        percentage for college admissions, job applications,
+                        and official records — without manual calculation errors.
                     </p>
 
                     <ul>
-                        <li>Instant calculations</li>
-                        <li>Mobile friendly</li>
-                        <li>Free to use</li>
-                        <li>No login required</li>
+                        <li>Supports both CBSE (×9.5) and university (×10) formulas</li>
+                        <li>Instant results — no waiting</li>
+                        <li>Works for school students (Class 10, 12) and college students</li>
+                        <li>Mobile friendly — use on any device</li>
+                        <li>Completely free — no login or sign-up required</li>
+                        <li>No data stored — calculation happens in your browser</li>
                     </ul>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="info-section">
+            <div class="container">
+
+                <div class="info-card">
+
+                    <h2>Frequently Asked Questions</h2>
+
+                    <h3>How to convert CGPA to percentage?</h3>
+                    <p>
+                        For CBSE students: multiply CGPA by 9.5. For most
+                        universities: multiply CGPA by 10. Example — 8.0 CGPA
+                        in CBSE = 8.0 × 9.5 = 76%.
+                    </p>
+
+                    <h3>What is the CGPA to percentage formula for CBSE?</h3>
+                    <p>
+                        CBSE official formula is: Percentage = CGPA × 9.5.
+                        So if your CGPA is 9.2, your percentage is
+                        9.2 × 9.5 = 87.4%.
+                    </p>
+
+                    <h3>How is CGPA calculated from marks?</h3>
+                    <p>
+                        Add the grade points of all subjects and divide by
+                        total number of subjects. For example, grade points
+                        9, 8, 7, 9, 8 in 5 subjects gives CGPA =
+                        41 ÷ 5 = 8.2.
+                    </p>
+
+                    <h3>Is 8.5 CGPA good?</h3>
+                    <p>
+                        Yes, 8.5 CGPA is considered very good. It equals
+                        80.75% (CBSE) or 85% (university formula). Most
+                        companies and colleges consider 7.5+ CGPA as good
+                        for placements and admissions.
+                    </p>
+
+                    <h3>Is this CGPA calculator free?</h3>
+                    <p>
+                        Yes, completely free. No login, no sign-up, no hidden
+                        charges. Just enter your CGPA and get instant results.
+                    </p>
 
                 </div>
 
@@ -253,7 +475,25 @@
     </footer>
 
     <script src="../js/main.js"></script>
-    <script src="../js/cgpa.js"></script>
+
+    <!-- Updated CGPA JS to support formula dropdown -->
+    <script>
+        document.getElementById('calculateCGPA').addEventListener('click', function () {
+            const cgpa = parseFloat(document.getElementById('cgpaInput').value);
+            const multiplier = parseFloat(document.getElementById('formulaSelect').value);
+            const resultBox = document.getElementById('cgpaResult');
+
+            if (isNaN(cgpa) || cgpa < 0 || cgpa > 10) {
+                resultBox.textContent = 'Please enter a valid CGPA between 0 and 10.';
+                return;
+            }
+
+            const percentage = (cgpa * multiplier).toFixed(2);
+            const formulaLabel = multiplier === 9.5 ? 'CBSE Formula (× 9.5)' : 'University Formula (× 10)';
+            resultBox.textContent = `Your Percentage: ${percentage}% (${formulaLabel})`;
+            resultBox.classList.add('show-result');
+        });
+    </script>
 
 </body>
-              </html>
+</html>
