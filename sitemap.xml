@@ -29,6 +29,31 @@
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
+    <!-- Individual Tools -->
+    
+    <url>
+    <loc>https://study-kendra.vercel.app/tools/attendance-calculator.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+<url>
+    <loc>https://study-kendra.vercel.app/tools/percentage-calculator.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+<url>
+    <loc>https://study-kendra.vercel.app/tools/cgpa-calculator.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+<url>
+    <loc>https://study-kendra.vercel.app/tools/study-timer.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
     
     <url>
         <loc>https://study-kendra.vercel.app/chapters/kaveri.html</loc>
