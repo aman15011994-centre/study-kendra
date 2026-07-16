@@ -89,11 +89,89 @@ const searchData = [
         link: "chapters/class-9-english-kaveri-chapter-3-winds-of-change.html"
     },
     
+    {
+    title: "Canvas of Soil",
+    category: "Poem",
+    keywords: "poem 3 kaveri poem 3 canvas of soil",
+    link: "chapters/class-9-english-kaveri-poem-3-canvas-of-soil.html"
+},
+
+{
+    title: "Vitamin-M",
+    category: "Chapter",
+    keywords: "chapter 4 kaveri chapter 4 class 9 english vitamin m vitamin-m",
+    link: "chapters/class-9-english-kaveri-chapter-4-vitamin-m.html"
+},
+
+{
+    title: "I Cannot Remember My Mother",
+    category: "Poem",
+    keywords: "poem 4 kaveri poem 4 i cannot remember my mother",
+    link: "chapters/class-9-english-kaveri-poem-4-i-cannot-remember-my-mother.html"
+},
+
+{
+    title: "The World of Limitless Possibilities",
+    category: "Chapter",
+    keywords: "chapter 5 kaveri chapter 5 class 9 english the world of limitless possibilities",
+    link: "chapters/class-9-english-kaveri-chapter-5-the-world-of-limitless-possibilities.html"
+},
+
+{
+    title: "Nine Gold Medals",
+    category: "Poem",
+    keywords: "poem 5 kaveri poem 5 nine gold medals",
+    link: "chapters/class-9-english-kaveri-poem-5-nine-gold-medals.html"
+},
+
+{
+    title: "Twin Melodies",
+    category: "Chapter",
+    keywords: "chapter 6 kaveri chapter 6 class 9 english twin melodies",
+    link: "chapters/class-9-english-kaveri-chapter-6-twin-melodies.html"
+},
+
+{
+    title: "A Friend Found in Music",
+    category: "Poem",
+    keywords: "poem 6 kaveri poem 6 a friend found in music",
+    link: "chapters/class-9-english-kaveri-poem-6-a-friend-found-in-music.html"
+},
+
+{
+    title: "Carrier of Words",
+    category: "Chapter",
+    keywords: "chapter 7 kaveri chapter 7 class 9 english carrier of words",
+    link: "chapters/class-9-english-kaveri-chapter-7-carrier-of-words.html"
+},
+
+{
+    title: "Words",
+    category: "Poem",
+    keywords: "poem 7 kaveri poem 7 words",
+    link: "chapters/class-9-english-kaveri-poem-7-words.html"
+},
+
+{
+    title: "Follow That Dream",
+    category: "Chapter",
+    keywords: "chapter 8 kaveri chapter 8 class 9 english follow that dream",
+    link: "chapters/class-9-english-kaveri-chapter-8-follow-that-dream.html"
+},
+
+{
+    title: "Believe in Yourself",
+    category: "Poem",
+    keywords: "poem 8 kaveri poem 8 believe in yourself",
+    link: "chapters/class-9-english-kaveri-poem-8-believe-in-yourself.html"
+},
+    
+    
     /* ==========================
        TOOLS
     ========================== */
     
-    {
+{
     title: "Percentage Calculator",
     category: "Tool",
     keywords: "percentage calculator",
@@ -122,6 +200,7 @@ const searchData = [
 }
     
 ];
+
 /* ==========================================
 SEARCH START
 ========================================== */
